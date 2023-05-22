@@ -23,23 +23,23 @@
     </form>
 
     {% for Tarea in tareas %}
-    <div class="card card-body text-black mt-2 d-flex flex-row justify-content-between">
-        <div>
-         <h4>{{Tarea.titulo}}</h4>
-          <p>{{Tarea.descripcion}}</p>
-        </div>
-        <form action="{% url 'eliminar_tareas' Tarea.id %}" method="POST">
+      <div class="list-group">
+        <div
+          class="card card-body bg-secondary text-light d-flex flex-row justify-content-between  mt-2"
+        >
+          <div>
+            <h3>{{Tarea.titulo}}</h3>
+            <p>{{Tarea.descripcion}}</p>
+          </div>
+          <form action="{% url 'eliminar_tareas' Tarea.id %}" method="POST">
             {% csrf_token %}
-            <button class="btn btn-danger btn-sm">Borrar</button>
-        </form>
-
-    {% empty %}
-        <h1 class="display-4 text-center">No hay tareas pendientes</h1>
-    </div>
-    {% endfor %}
-            </div>
+            <button class="btn btn-danger">Eliminar</button>
+          </form>
         </div>
+      </div>
+      {% empty %}
+      <h1 class="text-light">No hay tareas pendientes</h1>
+      {% endfor %}
     </div>
-
-</body>
+  </body>
 </html>
