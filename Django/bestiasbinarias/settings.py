@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-gp(+1^v_%0v^5i#(o(vkttq0c4mb7(omqo*66gtm08zp(pvhp&'
+SECRET_KEY = 'django-insecure-$wdf_b7ow(bfmyq25wf=jec^^$7f_ndea*#ptitzh231tic$%6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'task',
+    'tareas',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -75,12 +75,12 @@ WSGI_APPLICATION = 'bestiasbinarias.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-        "default": {
+    "default": {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "bestias binarias",
         "USER": "postgres",
         "PASSWORD": "admin",
-        "HOST": "127.0.0.1",
+        "HOST": "localhost",
         "PORT": "5432",
     }
 }
