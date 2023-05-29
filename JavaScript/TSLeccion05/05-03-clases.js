@@ -1,4 +1,4 @@
-class Persona{
+class Persona{ //Clase padre
     constructor(nombre, apellido){
         this._nombre = nombre;
         this._apellido = apellido;
@@ -20,6 +20,34 @@ class Persona{
         this._apellido = apellido;
     }
 
+    nombreCompleto(){
+        return this._nombre+' '+this._apellido;
+    }
+
+    toString(){ // Regresa un String
+        return this.nombreCompleto();    
+    }
+
+}
+
+class Empleado extends Persona { //Clase hija
+    constructor(nombre, apellido,departamento){
+        super(nombre, apellido);
+        this._departamento = departamento;
+    }
+
+    get departamento(){
+        return this._departamento;
+    }
+
+    set departamento(departamento){
+        this._departamento = departamento;
+    }
+
+    //Sobreescritura
+    nombreCompleto(){
+        return super.nombreCompleto()+', '+this._departamento;
+    } 
 }
 
 let persona1 = new Persona('Martin', 'Perez');
@@ -40,3 +68,12 @@ console.log(persona2.nombre);
 persona2.apellido = 'Garcia';
 console.log(persona2.apellido)
 //console.log(persona2);
+
+let Empleado1 = new Empleado('Maria', 'Gimenez', 'Sistemas');
+console.log(Empleado1);
+console.log(Empleado1.nombre);
+console.log(Empleado1.nombreCompleto());
+
+//Object.prototype.toString Esta la manera de acceder a atributos y metodos de manera dinamica
+
+
