@@ -1,4 +1,3 @@
-import psycopg2 as bd #otra manera de importa el psycopg2
 from logger_base import log
 import sys
 from psycopg2 import pool
@@ -6,7 +5,7 @@ from psycopg2 import pool
 class Conexion:
     _DATABASE = 'test_bd'
     _USERNAME = 'postgres'
-    _PASSWORD = 'postgres'
+    _PASSWORD = 'admin'
     _DB_PORT = '5432'
     _HOST = '127.0.0.1'
     _MIN_CON = 1
@@ -15,9 +14,9 @@ class Conexion:
 
     @classmethod
     def obtenerConexion(cls):
-      conexion = cls.obtenerPool().getconn()
-      log.debug(f'Conexion obtenida del pool: {conexion}')
-      return conexion
+        conexion = cls.obtenerPool().getconn()
+        log.debug(f'Conexion obtenida del pool: {conexion}')
+        return conexion
 
     @classmethod
     def obtenerCursor(cls):
