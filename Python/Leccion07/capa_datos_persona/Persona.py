@@ -1,6 +1,5 @@
 from logger_base import log
 
-
 class Persona:
     def __init__(self, id_persona=None, nombre=None, apellido=None, email=None):
         self._id_persona = id_persona
@@ -10,15 +9,14 @@ class Persona:
 
     def __str__(self):
         return f'''
-            Id Persona: {self._id_persona},
+            Id Persona: {self._id_persona}, 
             Nombre: {self._nombre},
-            Apellido: {self._apellido},
-            Email: {self._email},
+            Apellido: {self._apellido}, 
+            Email: {self._email}
         '''
-
-    # Metodos Getter and Setters
+    #Metodos Getters and Setters
     @property
-    def id_persona(self, id_persona):
+    def id_persona(self):
         return self._id_persona
 
     @id_persona.setter
@@ -26,7 +24,7 @@ class Persona:
         self._id_persona = id_persona
 
     @property
-    def nombre(self, nombre):
+    def nombre(self):
         return self._nombre
 
     @nombre.setter
@@ -34,26 +32,28 @@ class Persona:
         self._nombre = nombre
 
     @property
-    def apellido(self, apellido):
-        return self._apellido
+    def apellido(self):
+        return  self._apellido
 
     @apellido.setter
     def apellido(self, apellido):
         self._apellido = apellido
 
     @property
-    def email(self, email):
+    def email(self):
         return self._email
 
     @email.setter
     def email(self, email):
         self._email = email
 
-
 if __name__ == '__main__':
     persona1 = Persona(1, 'Juan', 'Perez', 'jperez@mail.com')
     log.debug(persona1)
-    persona2 = Persona(nombre='Jose', apellido='Lepez',email='ljose@mail.com')
-    log.debug(persona2)
-    persona1 = Persona(id_persona= 1)
+
+    # Simular un insert
+    persona2 = Persona(nombre='Jose', apellido='Loéz', email='ljose@mail.com')
+    log.debug(persona1)
+    # Simular un delete
+    persona1 = Persona(id_persona=1)
     log.debug(persona1)
